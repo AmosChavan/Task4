@@ -1,35 +1,138 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1b1c23;
+    font-family: 'Orbitron', sans-serif;
+    transition: background-color 0.3s;
+}
+
 .calculator {
- padding: 10px;
- border-radius: 1em;
- height: 380px;
- width: 400px;
- margin: auto;
- background-color: #191b28;
- box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    padding: 20px;
+    border-radius: 1em;
+    width: 270px;
+    background: linear-gradient(145deg, #21222d, #191a24);
+    box-shadow: 10px 10px 20px #15161d, -10px -10px 20px #1f202b;
+    text-align: center;
+    transition: background 0.3s;
 }
+
+h2 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.expression-display, .display-box {
+    width: 100%;
+    height: 35px;
+    margin-bottom: 5px;
+    background-color: #2c2e3b;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    padding: 5px;
+    text-align: right;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+}
+
 .display-box {
- font-family: Arial, Helvetica, sans-serif;
- background-color: #dcdbe1;
- border: solid black 0.5px;
- color: black;
- border-radius: 5px;
- width: 100%;
- height: 65%;
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
+
+.button-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
 .button {
- font-family: Arial, Helvetica, sans-serif;
- background-color: #73c0d8;
- color: rgb(5, 0, 0);
- border: solid black 0.5px;
- width: 100%;
- border-radius: 5px;
- height: 70%;
- outline: none;
+    flex: 1;
+    height: 50px;
+    background: #3e4a5a;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px #2a2d38;
 }
+
 .button:active {
- background: #5a5959;
- -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
- -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
- box-shadow: inset 0px 0px 5px #c1c1c1;
+    transform: translateY(4px);
+    box-shadow: 0px 2px #2a2d38;
+}
+
+.button:hover {
+    background: #58657f;
+}
+
+.operator {
+    background-color: #ff9100;
+}
+
+.memory {
+    background-color: #7b7c88;
+}
+
+.theme-toggle {
+    flex: 1;
+    height: 40px;
+    background-color: #4a4c56;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+    background-color: #60626d;
+}
+
+body.light-theme {
+    background-color: #f0f0f0;
+    color: #1b1c23;
+}
+
+body.light-theme .calculator {
+    background: linear-gradient(145deg, #e0e0e5, #c0c0c5);
+    box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
+}
+
+body.light-theme .button {
+    background: #c6d1db;
+    color: #1b1c23;
+}
+
+body.light-theme .operator {
+    background-color: #f78b28;
+}
+
+/* Style for scientific functions and history */
+.scientific {
+    background-color: #6a8eae;
+    color: white;
+}
+
+.scientific:hover {
+    background-color: #8ca9c9;
+}
+
+#history {
+    background: #2c2e3b;
+    color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+    height: 100px;
+    overflow-y: auto;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 0.9em;
 }
